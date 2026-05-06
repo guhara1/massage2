@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "build": "node scripts/build-static.mjs && node scripts/patch-reviews.mjs && node scripts/patch-neighborhoods.mjs && node scripts/patch-detail-pages.mjs && node scripts/patch-footer.mjs"
+    "build": "node scripts/build-static.mjs && node scripts/patch-reviews.mjs && node scripts/patch-neighborhoods.mjs && node scripts/patch-detail-pages.mjs && node scripts/patch-footer.mjs && node scripts/patch-favicon.mjs"
   }
 }
