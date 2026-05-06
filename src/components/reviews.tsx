@@ -1,6 +1,3 @@
-"use client";
-
-import { useMemo } from "react";
 import { site } from "@/lib/regions";
 
 const reviews = [
@@ -16,12 +13,6 @@ const reviews = [
   { area: "인천 중구", name: "서OO", text: "영종도 쪽 가능 여부가 궁금했는데 지역 구분이 되어 있어 찾기 편했습니다. 상담 후 방문 가능 시간을 확인했습니다." },
 ];
 
-function shuffleReviews() {
-  return [...reviews].sort(() => Math.random() - 0.5);
-}
-
 export function Reviews() {
-  const items = useMemo(shuffleReviews, []);
-
-  return <div className="review-grid">{items.map((review, index) => <article className="review-card" key={`${review.area}-${review.name}-${index}`}><div className="review-top"><span className="stars">★★★★★</span><span>{review.area}</span></div><p>{review.text}</p><div className="review-foot"><strong>{review.name}</strong><a href={site.tel}>전화예약</a></div></article>)}</div>;
+  return <div className="review-grid">{reviews.map((review) => <article className="review-card" key={`${review.area}-${review.name}`}><div className="review-top"><span className="stars">★★★★★</span><span>{review.area}</span></div><p>{review.text}</p><div className="review-foot"><strong>{review.name}</strong><a href={site.tel}>전화예약</a></div></article>)}</div>;
 }
