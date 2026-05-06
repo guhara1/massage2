@@ -1,5 +1,11 @@
 import { areaDescription, areaTitle, getDistricts, getNeighborhoods, getPrimaryRegions, pathFor, site } from "@/lib/regions";
 
+const primaryRegionCopy: Record<string, string> = {
+  서울: "강남, 마포, 송파, 영등포처럼 이동 수요가 많은 서울권을 구별로 나눠 정리했습니다. 업무지구, 주거지, 호텔 밀집 지역에서 출장마사지와 홈타이 상담 가능 구역을 빠르게 확인할 수 있습니다.",
+  경기: "수원, 성남, 용인, 고양 등 생활권이 넓은 경기 지역은 도시별 이동 거리와 예약 가능 시간을 함께 보는 것이 중요합니다. 시 단위 페이지에서 가까운 출장마사지 연결 동선을 확인하세요.",
+  인천: "송도, 청라, 부평, 구월동, 영종도처럼 생활권이 다른 인천 지역을 권역별로 안내합니다. 공항권, 해안권, 도심권 홈타이 상담 가능 여부를 지역 페이지에서 비교할 수 있습니다.",
+};
+
 export function Header() {
   return <header className="topbar"><div className="top-inner"><a className="brand" href="/"><span className="brand-mark">M</span>{site.name}</a><nav className="nav"><a href="/#price">요금표</a><a href="/#reviews">후기</a><a href="/#faq">FAQ</a><a href="/#map">지도</a><a href={site.tel}>전화예약</a></nav><a className="call-btn" href={site.tel}>{site.phone}</a></div></header>;
 }
@@ -20,7 +26,7 @@ export function PriceTable() {
 }
 
 export function RegionCards() {
-  return <div className="region-grid">{getPrimaryRegions().map((region) => <a className="region-card" href={pathFor(region)} key={region}><h3>{region} 출장마사지</h3><p>{areaDescription(region)}</p></a>)}</div>;
+  return <div className="region-grid">{getPrimaryRegions().map((region) => <a className="region-card" href={pathFor(region)} key={region}><h3>{region} 출장마사지</h3><p>{primaryRegionCopy[region] ?? areaDescription(region)}</p></a>)}</div>;
 }
 
 export function AreaLinkGrid({ region, district }: { region: string; district?: string }) {
@@ -31,7 +37,7 @@ export function AreaLinkGrid({ region, district }: { region: string; district?: 
 export function Shops({ seed }: { seed: string }) {
   const base = ["프리미엄 홈타이", "힐링 아로마", "VIP 방문케어", "더블유 테라피", "시그니처 케어", "로얄 홈케어"];
   const count = 2 + (seed.length % 3);
-  return <div className="shop-list">{base.slice(seed.length % 2, seed.length % 2 + count).map((name, index) => <article className="shop-card" key={name}><h3>{seed} {name}</h3><p>전화 상담 후 가능 시간, 관리사 배정, 코스 상세를 확인할 수 있습니다.</p><div className="shop-meta"><span className="tag">24시간 상담</span><span className="tag">후불제 안내</span><span className="tag">지역 방문</span></div><a className="primary-btn" href={site.tel} style={{marginTop:14}}>전화예약</a></article>)}</div>;
+  return <div className="shop-list">{base.slice(seed.length % 2, seed.length % 2 + count).map((name) => <article className="shop-card" key={name}><h3>{seed} {name}</h3><p>전화 상담 후 가능 시간, 관리사 배정, 코스 상세를 확인할 수 있습니다.</p><div className="shop-meta"><span className="tag">24시간 상담</span><span className="tag">후불제 안내</span><span className="tag">지역 방문</span></div><a className="primary-btn" href={site.tel} style={{marginTop:14}}>전화예약</a></article>)}</div>;
 }
 
 export function InfoSections({ region, district, neighborhood }: { region: string; district?: string; neighborhood?: string }) {
