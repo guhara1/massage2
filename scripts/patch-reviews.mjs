@@ -1,6 +1,8 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
 const reviewFiles = ["out/index.html", "out/reviews/index.html"];
+const homeTitle = "출장마사지 & 홈타이 “마사지허브” – 공식 예약 및 주의사항, 관리사 정보";
+const homeDescription = "출장마사지 및 홈타이 전문 “마사지허브” 공식 소개. 예약 시간, 신규 회원 5% 할인, 관리사 스타일, 주의사항 5가지, 자주 묻는 질문 정리. 2021년부터 운영. 실제 운영자 작성.";
 const regions = {
   "서울": ["강남구", "강동구", "강북구", "강서구", "관악구", "광진구", "구로구", "금천구", "노원구", "도봉구", "마포구", "서초구", "송파구", "영등포구", "용산구"],
   "경기": ["수원시", "성남시", "용인시", "고양시", "부천시", "안양시", "화성시", "평택시", "김포시", "하남시"],
@@ -66,6 +68,8 @@ for (const file of reviewFiles) {
 
 if (existsSync("out/index.html")) {
   let home = readFileSync("out/index.html", "utf8");
+  home = home.replace(/<title>[\s\S]*?<\/title>/, `<title>${homeTitle}</title>`);
+  home = home.replace(/<meta name="description" content="[\s\S]*?">/, `<meta name="description" content="${homeDescription}">`);
   home = home.replace(/<section class="section"><h2>서울 인기 구군<\/h2><div class="district-grid">[\s\S]*?<\/div><\/section>/, "");
   home = home.replace(/<div class="panel"><h2>빠른 지역 선택<\/h2><div class="grid-3">[\s\S]*?<\/div><\/div><\/section>/, `<div class="panel"><h2>빠른 지역 선택</h2><div class="grid-3">${quickRegionCards()}</div></div></section>`);
   writeFileSync("out/index.html", home, "utf8");
