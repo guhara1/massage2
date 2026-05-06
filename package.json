@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "build": "node scripts/build-static.mjs && node scripts/patch-reviews.mjs"
+    "build": "node scripts/build-static.mjs && node scripts/patch-reviews.mjs && node scripts/patch-neighborhoods.mjs"
   }
 }
