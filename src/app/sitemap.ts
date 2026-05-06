@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { getDistricts, getNeighborhoods, getPrimaryRegions, pathFor } from "@/lib/regions";
 
 const siteUrl = "https://massagepick.netlify.app";
+const daily = "daily" as const;
+const weekly = "weekly" as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -9,7 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return urls.map((url) => ({
     url: new URL(url, siteUrl).toString(),
     lastModified,
-    changeFrequency: url === "/" ? "daily" as const : "weekly" as const,
+    changeFrequency: url === "/" ? daily : weekly,
     priority: url === "/" ? 1 : 0.8,
   }));
 }
