@@ -1,3 +1,9 @@
 [build]
   command = "npm run build"
   publish = "out"
+
+[[redirects]]
+  from = "/reviews"
+  to = "/reviews/"
+  status = 301
+  force = true
