@@ -4,6 +4,7 @@
 
 - Live URL: https://massagepick.netlify.app
 - Netlify project: massagepick
+- Deployment: Netlify auto deploy from GitHub main
 
 ## Netlify build settings
 
