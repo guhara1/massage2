@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/lib/regions";
+
+const siteUrl = "https://massagepick.netlify.app";
 
 export default function robots(): MetadataRoute.Robots {
-  return { rules: [{ userAgent: "Googlebot", allow: "/" }, { userAgent: "Yeti", allow: "/" }, { userAgent: "NaverBot", allow: "/" }, { userAgent: "*", allow: "/" }], sitemap: `${site.url}/sitemap.xml` };
+  return { rules: [{ userAgent: "Googlebot", allow: "/" }, { userAgent: "Yeti", allow: "/" }, { userAgent: "NaverBot", allow: "/" }, { userAgent: "*", allow: "/" }], sitemap: `${siteUrl}/sitemap.xml` };
 }
