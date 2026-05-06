@@ -7,7 +7,7 @@ const primaryRegionCopy: Record<string, string> = {
 };
 
 export function Header() {
-  return <header className="topbar"><div className="top-inner"><a className="brand" href="/"><span className="brand-mark">M</span>{site.name}</a><nav className="nav"><a href="/#price">요금표</a><a href="/#reviews">후기</a><a href="/#faq">FAQ</a><a href="/#map">지도</a><a href={site.tel}>전화예약</a></nav><a className="call-btn" href={site.tel}>{site.phone}</a></div></header>;
+  return <header className="topbar"><div className="top-inner"><a className="brand" href="/"><span className="brand-mark">M</span>{site.name}</a><nav className="nav"><a href="/#price">요금표</a><a href="/reviews/">후기</a><a href="/#faq">FAQ</a><a href="/#map">지도</a><a href={site.tel}>전화예약</a></nav><a className="call-btn" href={site.tel}>{site.phone}</a></div></header>;
 }
 
 export function Footer() {
