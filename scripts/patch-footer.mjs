@@ -93,7 +93,7 @@ function footerHtml(pageUrl) {
   <div class="footer-inner hub-footer-inner">
     <section class="footer-about" aria-label="마사지허브 소개">
       <strong class="brand"><span class="brand-mark">M</span>마사지허브</strong>
-      <p>마사지허브는 서울, 경기, 인천 출장마사지와 홈타이 가능 지역을 행정구와 행정동 기준으로 정리하는 지역 기반 예약 안내 플랫폼입니다. 예약 전 요금, 가능 시간, 코스 범위, 주의사항을 먼저 확인할 수 있도록 운영 정보를 안내합니다.</p>
+      <p>마사지허브는 서울, 경기, 인천 출장마사지 가능 지역을 행정구와 행정동 기준으로 정리하는 지역 기반 예약 안내 플랫폼입니다. 예약 전 요금, 가능 시간, 코스 범위, 주의사항을 먼저 확인할 수 있도록 운영 정보를 안내합니다.</p>
     </section>
     <section class="footer-contact" aria-label="고객센터 및 운영시간">
       <div class="footer-info-card">

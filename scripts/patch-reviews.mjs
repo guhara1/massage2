@@ -1,8 +1,8 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 
 const reviewFiles = ["out/index.html", "out/reviews/index.html"];
-const homeTitle = "출장마사지 & 홈타이 “마사지허브” – 공식 예약 및 주의사항, 관리사 정보";
-const homeDescription = "출장마사지 및 홈타이 전문 “마사지허브” 공식 소개. 예약 시간, 신규 회원 5% 할인, 관리사 스타일, 주의사항 5가지, 자주 묻는 질문 정리. 2021년부터 운영. 실제 운영자 작성.";
+const homeTitle = "출장마사지 “마사지허브” – 공식 예약 및 주의사항, 관리사 정보";
+const homeDescription = "출장마사지 전문 “마사지허브” 공식 소개. 예약 시간, 신규 회원 5% 할인, 관리사 스타일, 주의사항 5가지, 자주 묻는 질문 정리. 2021년부터 운영. 실제 운영자 작성.";
 const regions = {
   "서울": ["강남구", "강동구", "강북구", "강서구", "관악구", "광진구", "구로구", "금천구", "노원구", "도봉구", "마포구", "서초구", "송파구", "영등포구", "용산구"],
   "경기": ["수원시", "성남시", "용인시", "고양시", "부천시", "안양시", "화성시", "평택시", "김포시", "하남시"],
@@ -49,7 +49,7 @@ function enc(value) {
 }
 
 function quickRegionCards() {
-  return Object.entries(regionSummaries).map(([region, item]) => `<a class="quick-region-card" href="/area/${enc(region)}/"><h3><strong>${item.title}</strong> 출장마사지</h3><p>${item.text}<br>지역별 홈타이 상담 안내</p><div class="quick-tags">${item.tags.map((tag) => `<span>${tag}</span>`).join("")}</div></a>`).join("");
+  return Object.entries(regionSummaries).map(([region, item]) => `<a class="quick-region-card" href="/area/${enc(region)}/"><h3><strong>${item.title}</strong> 출장마사지</h3><p>${item.text}<br>지역별 상담 안내</p><div class="quick-tags">${item.tags.map((tag) => `<span>${tag}</span>`).join("")}</div></a>`).join("");
 }
 
 function districtSection(region) {

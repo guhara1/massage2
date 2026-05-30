@@ -72,7 +72,7 @@ function courses(region, district, dong) {
 
 function shops(region, district, dong) {
   const profile = localProfile(region, district, dong);
-  const names = ["프리미엄 홈타이", "힐링 아로마", "VIP 방문케어", "시그니처 케어"];
+  const names = ["프리미엄 케어", "힐링 아로마", "VIP 방문케어", "시그니처 케어"];
   const tags = ["빠른 상담", "후불 안내", "관리사 확인", "코스 비교"];
   const shopNotes = [
     `${dong} 생활권 기준으로 가까운 방문 가능 업체를 먼저 확인합니다.`,
@@ -107,7 +107,7 @@ function info(region, district, dong) {
     pick(["예약 전 총 금액과 코스 범위를 다시 확인해 주세요", "과도한 음주 상태에서는 이용이 제한될 수 있습니다", "부적절한 요청이 있을 경우 상담 또는 방문이 중단될 수 있습니다"], seed, 2),
   ];
 
-  return `<section class="section"><div class="local-context"><p><strong>${dong} 지역 안내:</strong> ${region} ${district} ${dong}은 ${profile.regionTone}으로, ${profile.access}. ${profile.demand}. 마사지허브는 이 차이를 반영해 예약 전 확인해야 할 운영 정보와 주의사항을 지역별로 안내합니다.</p></div></section><section class="section"><div class="local-info"><article class="card"><h2>공지사항</h2><p class="lead">${dong} 예약은 시간대와 업체 배정 상황에 따라 달라질 수 있어 아래 항목을 먼저 확인합니다.</p><ul>${noticeItems.map((item) => `<li>${item}</li>`).join("")}</ul></article><article class="card"><h2>업체소개</h2><p class="lead">마사지허브는 ${dong} 주변 출장마사지와 홈타이 가능 업체를 비교하기 쉽게 정리하는 안내 플랫폼입니다.</p><ul>${introItems.map((item) => `<li>${item}</li>`).join("")}</ul></article><article class="card"><h2>관리사정보</h2><p class="lead">${dong} 관리사 배정은 코스, 시간, 업체 상황에 따라 달라지므로 상담 단계에서 세부 정보를 확인합니다.</p><ul>${managerItems.map((item) => `<li>${item}</li>`).join("")}</ul></article><article class="card"><h2>주의사항</h2><p class="lead">${dong} 출장 케어는 합법 웰니스 방문 관리 기준으로만 안내하며, 예약 전 이용 조건을 확인해야 합니다.</p><ul>${cautionItems.map((item) => `<li>${item}</li>`).join("")}</ul></article></div></section>`;
+  return `<section class="section"><div class="local-context"><p><strong>${dong} 지역 안내:</strong> ${region} ${district} ${dong}은 ${profile.regionTone}으로, ${profile.access}. ${profile.demand}. 마사지허브는 이 차이를 반영해 예약 전 확인해야 할 운영 정보와 주의사항을 지역별로 안내합니다.</p></div></section><section class="section"><div class="local-info"><article class="card"><h2>공지사항</h2><p class="lead">${dong} 예약은 시간대와 업체 배정 상황에 따라 달라질 수 있어 아래 항목을 먼저 확인합니다.</p><ul>${noticeItems.map((item) => `<li>${item}</li>`).join("")}</ul></article><article class="card"><h2>업체소개</h2><p class="lead">마사지허브는 ${dong} 주변 출장마사지 가능 업체를 비교하기 쉽게 정리하는 안내 플랫폼입니다.</p><ul>${introItems.map((item) => `<li>${item}</li>`).join("")}</ul></article><article class="card"><h2>관리사정보</h2><p class="lead">${dong} 관리사 배정은 코스, 시간, 업체 상황에 따라 달라지므로 상담 단계에서 세부 정보를 확인합니다.</p><ul>${managerItems.map((item) => `<li>${item}</li>`).join("")}</ul></article><article class="card"><h2>주의사항</h2><p class="lead">${dong} 출장 케어는 합법 웰니스 방문 관리 기준으로만 안내하며, 예약 전 이용 조건을 확인해야 합니다.</p><ul>${cautionItems.map((item) => `<li>${item}</li>`).join("")}</ul></article></div></section>`;
 }
 
 for (const region of listDirs(root)) {

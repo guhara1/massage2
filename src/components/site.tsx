@@ -1,9 +1,9 @@
 import { areaDescription, areaTitle, getDistricts, getNeighborhoods, getPrimaryRegions, pathFor, site } from "@/lib/regions";
 
 const primaryRegionCopy: Record<string, string> = {
-  서울: "강남, 마포, 송파, 영등포처럼 이동 수요가 많은 서울권을 구별로 나눠 정리했습니다. 업무지구, 주거지, 호텔 밀집 지역에서 출장마사지와 홈타이 상담 가능 구역을 빠르게 확인할 수 있습니다.",
+  서울: "강남, 마포, 송파, 영등포처럼 이동 수요가 많은 서울권을 구별로 나눠 정리했습니다. 업무지구, 주거지, 호텔 밀집 지역에서 출장마사지 상담 가능 구역을 빠르게 확인할 수 있습니다.",
   경기: "수원, 성남, 용인, 고양 등 생활권이 넓은 경기 지역은 도시별 이동 거리와 예약 가능 시간을 함께 보는 것이 중요합니다. 시 단위 페이지에서 가까운 출장마사지 연결 동선을 확인하세요.",
-  인천: "송도, 청라, 부평, 구월동, 영종도처럼 생활권이 다른 인천 지역을 권역별로 안내합니다. 공항권, 해안권, 도심권 홈타이 상담 가능 여부를 지역 페이지에서 비교할 수 있습니다.",
+  인천: "송도, 청라, 부평, 구월동, 영종도처럼 생활권이 다른 인천 지역을 권역별로 안내합니다. 공항권, 해안권, 도심권 출장마사지 상담 가능 여부를 지역 페이지에서 비교할 수 있습니다.",
 };
 
 export function Header() {
@@ -12,7 +12,7 @@ export function Header() {
 
 export function Footer() {
   const links = getPrimaryRegions().flatMap((region) => getDistricts(region).slice(0, 12).map((district) => ({ label: `${region} ${district} 출장마사지`, href: pathFor(region, district) })));
-  return <footer className="site-footer"><div className="footer-inner"><strong className="brand"><span className="brand-mark">M</span>{site.name}</strong><p className="lead">서울, 경기, 인천 출장마사지와 홈타이 지역 정보를 타이틀, 설명, 요금표, 주의사항, FAQ 기준으로 정리합니다.</p><div className="footer-links">{links.map((link) => <a href={link.href} key={link.href}>{link.label}</a>)}</div></div></footer>;
+  return <footer className="site-footer"><div className="footer-inner"><strong className="brand"><span className="brand-mark">M</span>{site.name}</strong><p className="lead">서울, 경기, 인천 출장마사지 지역 정보를 타이틀, 설명, 요금표, 주의사항, FAQ 기준으로 정리합니다.</p><div className="footer-links">{links.map((link) => <a href={link.href} key={link.href}>{link.label}</a>)}</div></div></footer>;
 }
 
 export function PriceTable() {
@@ -37,7 +37,7 @@ export function AreaLinkGrid({ region, district }: { region: string; district?: 
 }
 
 export function Shops({ seed }: { seed: string }) {
-  const base = ["프리미엄 홈타이", "힐링 아로마", "VIP 방문케어", "더블유 테라피", "시그니처 케어", "로얄 홈케어"];
+  const base = ["프리미엄 케어", "힐링 아로마", "VIP 방문케어", "더블유 테라피", "시그니처 케어", "로얄 홈케어"];
   const count = 2 + (seed.length % 3);
   return <div className="shop-list">{base.slice(seed.length % 2, seed.length % 2 + count).map((name) => <article className="shop-card" key={name}><h3>{seed} {name}</h3><p>전화 상담 후 가능 시간, 관리사 배정, 코스 상세를 확인할 수 있습니다.</p><div className="shop-meta"><span className="tag">24시간 상담</span><span className="tag">후불제 안내</span><span className="tag">지역 방문</span></div><a className="primary-btn" href={site.tel} style={{marginTop:14}}>전화예약</a></article>)}</div>;
 }
@@ -45,7 +45,7 @@ export function Shops({ seed }: { seed: string }) {
 export function InfoSections({ region, district, neighborhood }: { region: string; district?: string; neighborhood?: string }) {
   const area = [region, district, neighborhood].filter(Boolean).join(" ");
   const cards = [
-    ["공지사항", `${area} 출장마사지와 홈타이 예약 전 가능 시간, 코스, 추가 요금을 전화로 확인해 주세요.`],
+    ["공지사항", `${area} 출장마사지 예약 전 가능 시간, 코스, 추가 요금을 전화로 확인해 주세요.`],
     ["업체소개", "마사지허브는 지역별 제휴 가능 업체 정보를 비교하기 쉽게 정리하는 중개형 안내 플랫폼입니다."],
     ["기타사항", "숙소, 자택, 오피스텔 방문 가능 여부는 주소와 시간대에 따라 달라질 수 있습니다."],
     ["관리사정보", "관리사 성별, 경력, 가능 코스는 업체별로 다르며 예약 전 상담으로 확인합니다."],
@@ -58,7 +58,7 @@ export function Faq({ region, district, neighborhood }: { region: string; distri
   const area = [region, district, neighborhood].filter(Boolean).join(" ");
   const faqs = [
     [`${area} 출장마사지는 바로 예약 가능한가요?`, "업체 상황에 따라 다르며 전화 상담으로 가능 시간과 코스를 확인할 수 있습니다."],
-    ["홈타이와 출장마사지 차이는 무엇인가요?", "둘 다 방문형 케어를 의미하며 업체별 코스 구성과 관리 방식이 다를 수 있습니다."],
+    ["출장마사지는 어떤 방식으로 진행되나요?", "원하시는 지역으로 관리사가 방문하는 방식이며 업체별 코스 구성과 관리 방식이 다를 수 있습니다."],
     ["요금은 고정인가요?", "기본 요금표는 안내 기준이며 지역, 시간대, 코스에 따라 달라질 수 있습니다."],
     ["관리사 정보는 확인 가능한가요?", "성별, 경력, 가능 코스는 전화 상담 시 업체를 통해 확인하는 방식입니다."],
     ["불법 서비스도 중개하나요?", "아니요. 마사지허브는 합법 웰니스 방문 케어 안내만을 기준으로 합니다."],
@@ -67,5 +67,5 @@ export function Faq({ region, district, neighborhood }: { region: string; distri
 }
 
 export function SeoIntro({ region, district, neighborhood }: { region: string; district?: string; neighborhood?: string }) {
-  return <><p className="eyebrow">출장마사지 · 홈타이 · 방문마사지</p><h1>{areaTitle(region, district, neighborhood)}</h1><p className="hero-copy lead">{areaDescription(region, district, neighborhood)}</p></>;
+  return <><p className="eyebrow">출장마사지 · 방문마사지</p><h1>{areaTitle(region, district, neighborhood)}</h1><p className="hero-copy lead">{areaDescription(region, district, neighborhood)}</p></>;
 }

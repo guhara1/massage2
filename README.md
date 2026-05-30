@@ -1,6 +1,6 @@
 # 마사지허브
 
-서울, 경기, 인천 출장마사지/홈타이 지역 중개 플랫폼입니다.
+서울, 경기, 인천 출장마사지 지역 중개 플랫폼입니다.
 
 - Live URL: https://massagepick.netlify.app
 - Netlify project: massagepick
