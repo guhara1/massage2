@@ -3,8 +3,8 @@ import { Reviews } from "@/components/reviews";
 import { Footer, Header } from "@/components/site";
 
 export const metadata: Metadata = {
-  title: "마사지허브 고객 후기 | 출장마사지 홈타이 예약 이용 후기",
-  description: "서울, 경기, 인천 출장마사지와 홈타이 예약 상담을 이용한 고객 후기 10개를 확인하세요. 응답 속도, 예약 시간, 요금 확인, 지역 방문 안내를 정리했습니다.",
+  title: "마사지허브 고객 후기 | 출장마사지 예약 이용 후기",
+  description: "서울, 경기, 인천 출장마사지 예약 상담을 이용한 고객 후기 10개를 확인하세요. 응답 속도, 예약 시간, 요금 확인, 지역 방문 안내를 정리했습니다.",
   alternates: { canonical: "/reviews/" },
 };
 

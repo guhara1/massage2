@@ -63,7 +63,7 @@ function headTags({ title, description, url }) {
     telephone: phone,
     foundingDate: "2021",
     areaServed: ["서울", "경기", "인천"],
-    description: "서울, 경기, 인천 출장마사지와 홈타이 지역 정보를 행정구와 행정동 기준으로 정리하는 예약 안내 플랫폼",
+    description: "서울, 경기, 인천 출장마사지 지역 정보를 행정구와 행정동 기준으로 정리하는 예약 안내 플랫폼",
     contactPoint: [{
       "@type": "ContactPoint",
       telephone: phone,
@@ -115,13 +115,13 @@ function simplePage({ title, description, body }) {
 
 write("out/about/index.html", simplePage({
   title: "마사지허브 소개 | 운영 기준과 고객 안내",
-  description: "마사지허브는 서울, 경기, 인천 출장마사지와 홈타이 지역 정보를 정리하는 예약 안내 플랫폼입니다. 운영 기준, 고객센터, 정보 작성 기준을 안내합니다.",
-  body: `<main><section class="section"><p class="eyebrow">About MassageHub</p><h1>마사지허브 소개</h1><p class="lead">마사지허브는 2021년부터 서울, 경기, 인천 출장마사지와 홈타이 가능 지역을 행정구와 행정동 기준으로 정리해 온 예약 안내 플랫폼입니다.</p><article class="card"><h2>운영 기준</h2><p>지역별 가능 업체, 요금표, 마사지 종류, 예약 전 확인사항, 주의사항을 사용자가 빠르게 비교할 수 있도록 구성합니다. 정보는 과장된 표현보다 상담 전 실제로 확인해야 할 항목을 우선합니다.</p></article><article class="card"><h2>고객센터</h2><p>전화 상담: <a href="${tel}">${phone}</a><br>운영시간: 오전 11시 ~ 익일 오전 8시<br>운영일: 연중무휴</p></article><article class="card"><h2>작성 기준</h2><ul><li>검색 의도와 실제 예약 흐름에 맞는 정보 제공</li><li>불법 서비스 등록 및 노출 배제</li><li>지역명만 반복하는 얇은 콘텐츠 지양</li><li>예약 전 요금, 코스, 가능 시간, 주의사항 확인 강조</li></ul></article></section></main>`,
+  description: "마사지허브는 서울, 경기, 인천 출장마사지 지역 정보를 정리하는 예약 안내 플랫폼입니다. 운영 기준, 고객센터, 정보 작성 기준을 안내합니다.",
+  body: `<main><section class="section"><p class="eyebrow">About MassageHub</p><h1>마사지허브 소개</h1><p class="lead">마사지허브는 2021년부터 서울, 경기, 인천 출장마사지 가능 지역을 행정구와 행정동 기준으로 정리해 온 예약 안내 플랫폼입니다.</p><article class="card"><h2>운영 기준</h2><p>지역별 가능 업체, 요금표, 마사지 종류, 예약 전 확인사항, 주의사항을 사용자가 빠르게 비교할 수 있도록 구성합니다. 정보는 과장된 표현보다 상담 전 실제로 확인해야 할 항목을 우선합니다.</p></article><article class="card"><h2>고객센터</h2><p>전화 상담: <a href="${tel}">${phone}</a><br>운영시간: 오전 11시 ~ 익일 오전 8시<br>운영일: 연중무휴</p></article><article class="card"><h2>작성 기준</h2><ul><li>검색 의도와 실제 예약 흐름에 맞는 정보 제공</li><li>불법 서비스 등록 및 노출 배제</li><li>지역명만 반복하는 얇은 콘텐츠 지양</li><li>예약 전 요금, 코스, 가능 시간, 주의사항 확인 강조</li></ul></article></section></main>`,
 }));
 
 write("out/safety/index.html", simplePage({
   title: "출장마사지 이용 주의사항 | 마사지허브 안전 기준",
-  description: "출장마사지와 홈타이 예약 전 확인해야 할 요금, 코스, 관리 범위, 합법 운영 기준과 주의사항을 마사지허브에서 안내합니다.",
+  description: "출장마사지 예약 전 확인해야 할 요금, 코스, 관리 범위, 합법 운영 기준과 주의사항을 마사지허브에서 안내합니다.",
   body: `<main><section class="section"><p class="eyebrow">Safety Guide</p><h1>출장마사지 이용 주의사항</h1><p class="lead">마사지허브는 합법 웰니스 방문 관리 기준의 정보만 안내합니다. 예약 전 아래 기준을 확인해 주세요.</p><article class="card"><h2>예약 전 확인</h2><ul><li>총 금액, 코스 시간, 추가 요금 여부</li><li>방문 가능 시간과 예상 도착 시간</li><li>관리사 배정 가능 여부와 코스 범위</li><li>방문 주소, 출입 방법, 주차 가능 여부</li></ul></article><article class="card"><h2>허용하지 않는 요청</h2><p>불법 성매매, 유사 성행위, 미성년자 관련 서비스, 과도한 음주 상태의 이용, 부적절한 요청은 허용하지 않습니다. 해당 요청이 확인되면 상담 또는 방문이 중단될 수 있습니다.</p></article><article class="card"><h2>신뢰성 기준</h2><p>마사지허브는 노출 가능 여부, 스팸성 표현 배제, 검색 의도 관련성, 도움됨과 신뢰성, 페이지 경험, 내부 링크와 원본성 기준을 고려해 정보를 정리합니다.</p></article></section></main>`,
 }));
 
@@ -129,7 +129,7 @@ for (const file of walk(outDir).filter((path) => path.endsWith(".html"))) {
   let html = readFileSync(file, "utf8");
   const url = toUrl(file);
   const title = textBetween(html, /<title>(.*?)<\/title>/i);
-  const description = textBetween(html, /<meta name="description" content="([^"]*)"/i, "서울, 경기, 인천 출장마사지와 홈타이 지역 안내");
+  const description = textBetween(html, /<meta name="description" content="([^"]*)"/i, "서울, 경기, 인천 출장마사지 지역 안내");
 
   html = html
     .replace(/<link rel="canonical"[^>]*>/g, "")

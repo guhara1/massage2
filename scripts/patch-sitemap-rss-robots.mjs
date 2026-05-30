@@ -30,7 +30,7 @@ function pageTitle(file) {
 function pageDescription(file) {
   const html = readFileSync(file, "utf8");
   const match = html.match(/<meta name="description" content="([^"]*)"/i);
-  return match ? match[1].trim() : "서울, 경기, 인천 출장마사지 홈타이 지역 안내";
+  return match ? match[1].trim() : "서울, 경기, 인천 출장마사지 지역 안내";
 }
 
 const htmlPages = walk(outDir)
@@ -56,7 +56,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
   <channel>
     <title>마사지허브</title>
     <link>${siteUrl}/</link>
-    <description>서울, 경기, 인천 출장마사지와 홈타이 지역 및 마사지 종류 안내</description>
+    <description>서울, 경기, 인천 출장마사지 지역 및 마사지 종류 안내</description>
     <language>ko-KR</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
 ${rssPages.map(({ file, url }) => `    <item><title>${escapeXml(pageTitle(file))}</title><link>${siteUrl}${escapeXml(url)}</link><guid>${siteUrl}${escapeXml(url)}</guid><description>${escapeXml(pageDescription(file))}</description><pubDate>${new Date().toUTCString()}</pubDate></item>`).join("\n")}

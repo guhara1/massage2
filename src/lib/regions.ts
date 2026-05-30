@@ -96,12 +96,12 @@ export function getNeighborhoods(region: string, district: string) {
 
 export function areaTitle(region: string, district?: string, neighborhood?: string) {
   const area = [region, district, neighborhood].filter(Boolean).join(" ");
-  return `${area} 출장마사지 홈타이 | 마사지허브 지역 안내`;
+  return `${area} 출장마사지 | 마사지허브 지역 안내`;
 }
 
 export function areaDescription(region: string, district?: string, neighborhood?: string) {
   const area = [region, district, neighborhood].filter(Boolean).join(" ");
-  return `${area} 출장마사지, 홈타이, 방문마사지 가능 지역과 요금표, 업체소개, 관리사정보, 주의사항, 전화예약 정보를 마사지허브에서 확인하세요.`;
+  return `${area} 출장마사지, 방문마사지 가능 지역과 요금표, 업체소개, 관리사정보, 주의사항, 전화예약 정보를 마사지허브에서 확인하세요.`;
 }
 
 export function pathFor(region: string, district?: string, neighborhood?: string) {
