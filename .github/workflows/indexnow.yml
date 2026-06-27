@@ -1,0 +1,37 @@
+name: IndexNow 색인 통보
+
+# main 에 푸시(=새 글/지역 페이지 배포)될 때마다 Bing·Naver·Yandex 에 즉시 색인 통보.
+# Netlify 배포가 끝나 사이트가 라이브 상태가 된 뒤 sitemap.xml 의 모든 URL을 제출합니다.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}   # 수동 실행도 가능
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 저장소 체크아웃
+        uses: actions/checkout@v4
+
+      - name: Netlify 배포 대기
+        run: sleep 180   # Netlify 빌드/배포가 라이브로 반영되도록 약 3분 대기
+
+      - name: Python 설정
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: IndexNow 통보 (Bing·Naver·Yandex)
+        run: python tools/indexnow.py
+
+      # 선택: Google Indexing API 자동 통보.
+      # 저장소 Secrets 에 GOOGLE_SA_JSON (서비스 계정 JSON 전체)을 등록하면 활성화됩니다.
+      - name: Google Indexing API 통보 (선택)
+        if: ${{ secrets.GOOGLE_SA_JSON != '' }}
+        env:
+          GOOGLE_SA_JSON_CONTENT: ${{ secrets.GOOGLE_SA_JSON }}
+        run: |
+          pip install -r tools/requirements.txt
+          printf '%s' "$GOOGLE_SA_JSON_CONTENT" > /tmp/sa.json
+          GOOGLE_SA_JSON=/tmp/sa.json python tools/google_indexing.py

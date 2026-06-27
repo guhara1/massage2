@@ -1,7 +1,7 @@
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import { dirname } from "node:path";
 
-const siteUrl = "https://massagepick.netlify.app";
+const siteUrl = "https://massagepick1.netlify.app";
 const region = "경기";
 const district = "시흥시";
 const dongs = ["대야동", "신천동", "은행동", "정왕동", "배곧동", "월곶동", "목감동", "능곡동", "장곡동", "군자동", "매화동", "과림동"];

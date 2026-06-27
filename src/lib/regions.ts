@@ -2,7 +2,7 @@ export type RegionMap = Record<string, Record<string, string[]>>;
 
 export const site = {
   name: "마사지허브",
-  url: "https://massagehub.netlify.app",
+  url: "https://massagepick1.netlify.app",
   phone: "0508-202-4683",
   tel: "tel:05082024683",
 };
