@@ -2,7 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync, readdirSync, statSync, existsSy
 import { dirname, join } from "node:path";
 
 const outDir = "out";
-const siteUrl = "https://massagepick.netlify.app";
+const siteUrl = "https://massagepick1.netlify.app";
 const phone = "0508-202-4683";
 const tel = "tel:05082024683";
 

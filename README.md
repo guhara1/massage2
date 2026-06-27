@@ -2,7 +2,7 @@
 
 서울, 경기, 인천 출장마사지 지역 중개 플랫폼입니다.
 
-- Live URL: https://massagepick.netlify.app
+- Live URL: https://massagepick1.netlify.app
 - Netlify project: massagepick
 - Deployment: Netlify auto deploy from GitHub main
 

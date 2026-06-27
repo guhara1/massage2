@@ -2,7 +2,7 @@ import { readdirSync, readFileSync, writeFileSync, statSync } from "node:fs";
 import { join } from "node:path";
 
 const outDir = "out";
-const siteUrl = "https://massagepick.netlify.app";
+const siteUrl = "https://massagepick1.netlify.app";
 const today = new Date().toISOString().slice(0, 10);
 
 function walk(dir) {

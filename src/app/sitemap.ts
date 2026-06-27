@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getDistricts, getNeighborhoods, getPrimaryRegions, pathFor } from "@/lib/regions";
 
-const siteUrl = "https://massagepick.netlify.app";
+const siteUrl = "https://massagepick1.netlify.app";
 const daily = "daily" as const;
 const weekly = "weekly" as const;
 

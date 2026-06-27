@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { site } from "@/lib/regions";
 
-const siteUrl = "https://massagepick.netlify.app";
+const siteUrl = "https://massagepick1.netlify.app";
 const title = "출장마사지 “마사지허브” – 공식 예약 및 주의사항, 관리사 정보";
 const description = "출장마사지 전문 “마사지허브” 공식 소개. 예약 시간, 신규 회원 5% 할인, 관리사 스타일, 주의사항 5가지, 자주 묻는 질문 정리. 2021년부터 운영. 실제 운영자 작성.";
 

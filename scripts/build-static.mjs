@@ -1,7 +1,7 @@
 ﻿import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
-const siteUrl = "https://massagepick.netlify.app";
+const siteUrl = "https://massagepick1.netlify.app";
 const phone = "0508-202-4683";
 const tel = "tel:05082024683";
 
@@ -57,4 +57,8 @@ const urls = ["/", "/reviews/", ...Object.entries(regions).flatMap(([r, ds]) => 
 write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.map(u => `<url><loc>${siteUrl}${u}</loc></url>`).join("")}</urlset>`);
 write("robots.txt", `User-agent: Googlebot\nAllow: /\nUser-agent: Yeti\nAllow: /\nUser-agent: NaverBot\nAllow: /\nUser-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml\n`);
 write("rss.xml", `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>마사지허브</title><link>${siteUrl}/</link><description>서울 경기 인천 출장마사지 지역 안내</description><language>ko-KR</language></channel></rss>`);
+
+// IndexNow verification key file (served at site root so Bing/Naver can verify ownership).
+const indexNowKey = "1c04621791f9ea2e13ce07cb47b1b193";
+write(`${indexNowKey}.txt`, indexNowKey);
 
